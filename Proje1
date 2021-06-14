@@ -1,0 +1,27 @@
+""" Ödev 1 : Bir listeyi düzleştiren (flatten) fonksiyon yazın. """
+flatten_list = []
+def flatten(input_list):
+   x = [flatten(item) if isinstance(item,list)  else flatten_list.append(item) for item in input_list ] 
+   return x 
+input_list = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
+flatten(input_list)
+print(flatten_list)
+
+
+
+
+"""Ödev 2 : Verilen listenin içindeki elemanları tersine döndüren bir fonksiyon yazın. Eğer listenin içindeki elemanlar da liste içeriyorsa onların elemanlarını da tersine döndürün."""
+def flatten(input_list):         
+    for a in input_list:
+        if isinstance(a,list):
+            flatten(a)
+        else:
+            input_list.reverse()
+            return a   
+input_list = [[1, 2], [3, 4], [5, 6, 7]]
+flatten(input_list)
+print(input_list)
+
+
+
+
